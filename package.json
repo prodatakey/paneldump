@@ -1,10 +1,10 @@
 {
   "name": "pdump",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A tool to dump data from a pdk.io cloud system",
   "main": "index.js",
   "scripts": {
-    "build": "pkg --targets=node8-win,node8-mac,node8-linux ./index.js",
+	"build-win": "mkdir dist && zip -r dist/paneldump-0.1.1-win-x64.zip dump.bat node.exe node_modules index.js main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,8 +26,5 @@
     "lodash": "^4.17.11",
     "ora": "^3.1.0"
   },
-  "devDependencies": {
-    "nexe": "^3.0.0-beta.15",
-    "pkg": "^4.3.7"
-  }
+  "devDependencies": {}
 }
