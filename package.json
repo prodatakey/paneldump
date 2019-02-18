@@ -2,9 +2,15 @@
   "name": "pdump",
   "version": "0.1.1",
   "description": "A tool to dump data from a pdk.io cloud system",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-	"build-win": "mkdir dist && zip -r dist/paneldump-0.1.1-win-x64.zip dump.bat node.exe node_modules index.js main.js",
+	"prebuild": "mkdir -p dist; cp package.json dist && cp -aR src dist && cd dist && npm i --production",
+	"build": "npm run build:win-x64",
+
+	"prebuild:win-x64": "cp dump.bat dist && mkdir -p dist/win-x64; cd dist/win-x64 && curl https://nodejs.org/dist/latest-v10.x/win-x64/node.exe -O",
+    "build:win-x64": "cd dist && zip -r paneldump-0.1.1-win-x64.zip dump.bat win-x64/node.exe node_modules src",
+
+    "lint": "eslint src/**/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,5 +32,8 @@
     "lodash": "^4.17.11",
     "ora": "^3.1.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.14.0"
+  }
 }
