@@ -5,12 +5,11 @@ module.exports = {
     'no-console': 0,
   },
 
+  parser: 'babel-eslint',
   parserOptions: {
-    ecmaVersion: 8,
+    ecmaVersion: 10,
     sourceType: 'module',
-    ecmaFeatures: {
-      experimentalObjectRestSpread: true
-    }
+    allowAwaitOutsideFunction: true,
   },
 
   env: {
@@ -24,14 +23,13 @@ module.exports = {
       files: [ 'src/**/*.spec.js' ],
       env: {
         mocha: true,
-        chai: true,
       },
       globals: {
         sinon: true,
         proxyquire: true,
-        expect: true
-      }
-    }
+        expect: true,
+      },
+    },
   ]
 };
 
