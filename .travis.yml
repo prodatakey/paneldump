@@ -1,3 +1,20 @@
 language: node_js
-
 script: npm run build
+deploy:
+  - provider: releases
+    api_key:
+      secure: lo0vTBurZHhV4uDrn436auil81+hriaeagnMHGXy/gAynHj4VXHahh9qDQFkZX+XA6H94dFtOkqssTnWkzvgDcm0I0rL9xaG03vACtVImNJc68qCo7hW+89TkaX3LHzhbkpDyYTYXtHmjUHH9vPRlabgJS5X5u+3cII30vF+vbt+jUG/87e9vKRmlu9E+UcPqn0Ue/wGEgNEO3Q4XMA5rBrnvZdxRgevbRr/eCCQYhAu6tjK2aGDev56JTjxTwKVUXY221C4/setQ0jAeL5pddwzqlcAY6qxYOWRosiVoUKFK3088CA9cVRhUZqtkrZWGkWdpFquJEJIniLT2cc+Ui3cmEe2IXimPxiY5a3cTmSD9ECoooLxfmKtZFB+dnzBEynLsO2zUwnFEXbt4HBl/zHBStQeX+4+fFqbUthuP/bTt6Os4ONSVrt/moZRLpKQL+F8ccG/UGgHuCtfCnboo8wIrIWekJJuUl5tRTUKex/IEkwdTfWXqXoxoBXUTmkuFGd/5TMykubtdsoTUhf5692rDzL7WTsDnK1EbLa6/CYdaLiY6xssQOOXyLXbBpHnVaV+5Z8GuytnVNMr47mZsDuCdVX6cJ0XMHGZzC5N2Alo5/pneffXA3ZIg083xtFztNUwX/6cyKqIW5ARJvjRy1Wcnk7TZGOAqae2f6IZKEo=
+    file_glob: true
+    file: dist/*.zip
+    skip_cleanup: true
+    on:
+      tags: true
+  - provider: releases
+    api_key:
+      secure: lo0vTBurZHhV4uDrn436auil81+hriaeagnMHGXy/gAynHj4VXHahh9qDQFkZX+XA6H94dFtOkqssTnWkzvgDcm0I0rL9xaG03vACtVImNJc68qCo7hW+89TkaX3LHzhbkpDyYTYXtHmjUHH9vPRlabgJS5X5u+3cII30vF+vbt+jUG/87e9vKRmlu9E+UcPqn0Ue/wGEgNEO3Q4XMA5rBrnvZdxRgevbRr/eCCQYhAu6tjK2aGDev56JTjxTwKVUXY221C4/setQ0jAeL5pddwzqlcAY6qxYOWRosiVoUKFK3088CA9cVRhUZqtkrZWGkWdpFquJEJIniLT2cc+Ui3cmEe2IXimPxiY5a3cTmSD9ECoooLxfmKtZFB+dnzBEynLsO2zUwnFEXbt4HBl/zHBStQeX+4+fFqbUthuP/bTt6Os4ONSVrt/moZRLpKQL+F8ccG/UGgHuCtfCnboo8wIrIWekJJuUl5tRTUKex/IEkwdTfWXqXoxoBXUTmkuFGd/5TMykubtdsoTUhf5692rDzL7WTsDnK1EbLa6/CYdaLiY6xssQOOXyLXbBpHnVaV+5Z8GuytnVNMr47mZsDuCdVX6cJ0XMHGZzC5N2Alo5/pneffXA3ZIg083xtFztNUwX/6cyKqIW5ARJvjRy1Wcnk7TZGOAqae2f6IZKEo=
+    file_glob: true
+    file: dist/*.zip
+    skip_cleanup: true
+    draft: true
+    on:
+      tags: false
