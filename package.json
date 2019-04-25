@@ -1,6 +1,6 @@
 {
   "name": "pdump",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A tool to dump data from a pdk.io cloud system",
   "main": "src/index.js",
   "scripts": {
@@ -29,6 +29,7 @@
   "dependencies": {
     "@pdk/client": "^0.7.0",
     "asyncp": "^0.8.0",
+    "esm": "^3.2.22",
     "lodash": "^4.17.11",
     "ora": "^3.1.0"
   },
